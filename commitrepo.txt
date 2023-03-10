@@ -24,3 +24,27 @@ user.append({"nama": nama, "nik": nik, "jenis_kelamin": jenis_kelamin, "tanggal_
 print("Data user terbaru:")
 for data in user:
     print(data)
+
+3.
+user = [
+    {"nama": "arsene lupin", "nik": 1234, "jenis_kelamin": "male", "tanggal_lahir": "1902-03-23"},
+    {"nama": "sherlock holmes", "nik": 4321, "jenis_kelamin": "male", "tanggal_lahir": "1876-08-16"},
+    {"nama": "irene adler", "nik": 6789, "jenis_kelamin": "female", "tanggal_lahir": "1884-10-07"}
+]
+
+# Menerima input dari user
+nama = input("Masukkan nama yang ingin dicari: ")
+
+# Mencari data berdasarkan nama
+found = False
+for data in user:
+    if data["nama"].lower() == nama.lower():
+        found = True
+        print("Data lengkap dari", nama, "adalah:")
+        print("NIK:", data["nik"])
+        print("Jenis kelamin:", data["jenis_kelamin"])
+        print("Tanggal lahir:", data["tanggal_lahir"])
+
+# Jika tidak ditemukan, tampilkan pesan "data tidak ada"
+if not found:
+    print("Data tidak ada")
